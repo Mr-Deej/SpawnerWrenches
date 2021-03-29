@@ -19,6 +19,7 @@ public class PrepareAnvilListener implements Listener {
 
         if (item != null && item.hasItemMeta()) {
             ItemMeta meta = item.getItemMeta();
+            assert meta != null;
             PersistentDataContainer container = meta.getPersistentDataContainer();
 
             if (container.has(Keys.WRENCHES, PersistentDataType.STRING)) {

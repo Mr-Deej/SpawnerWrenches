@@ -20,6 +20,7 @@ import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
 
 import java.util.HashMap;
+import java.util.Objects;
 
 public class PlayerInteractListener implements Listener {
 
@@ -41,7 +42,7 @@ public class PlayerInteractListener implements Listener {
         NamespacedKey wrenches = Keys.WRENCHES;
         NamespacedKey wrenchUses = Keys.USES;
         if (container.has(wrenches, PersistentDataType.STRING)) {
-            if (container.get(wrenches, PersistentDataType.STRING).equalsIgnoreCase("wrench")) {
+            if (Objects.requireNonNull(container.get(wrenches, PersistentDataType.STRING)).equalsIgnoreCase("wrench")) {
                 Bukkit.getScheduler().runTaskLater(Main.getInstance(), () -> {
                     EntityType entityType = ((CreatureSpawner) block.getState()).getSpawnedType();
                     PlayerPickUpSpawnerEvent event = new PlayerPickUpSpawnerEvent(player, block, entityType);
@@ -89,7 +90,7 @@ public class PlayerInteractListener implements Listener {
                             player.playSound(player.getLocation(), Sound.ITEM_SHIELD_BLOCK, 0.5f, 0);
                         }, 10);
                     }
-                }, 20 * Language.PICKUP_DELAY.toInt());
+                }, 20L * Language.PICKUP_DELAY.toInt());
             }
         }
     }

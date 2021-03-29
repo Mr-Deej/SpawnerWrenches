@@ -1,6 +1,5 @@
 package ltd.indigostudios.spawnerwrenches.commands;
 
-import ltd.indigostudios.spawnerwrenches.Main;
 import ltd.indigostudios.spawnerwrenches.api.Language;
 import ltd.indigostudios.spawnerwrenches.utils.Text;
 import ltd.indigostudios.spawnerwrenches.utils.Utils;

@@ -22,6 +22,7 @@ public class BlockPlaceListener implements Listener {
     public void onPlace(BlockPlaceEvent e) {
         ItemStack item = e.getItemInHand();
         ItemMeta meta = item.getItemMeta();
+        assert meta != null;
         PersistentDataContainer container = meta.getPersistentDataContainer();
 
         NamespacedKey key = Keys.WRENCHES;

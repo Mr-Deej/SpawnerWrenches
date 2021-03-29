@@ -7,9 +7,11 @@ import ltd.indigostudios.spawnerwrenches.utils.YML;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 
+import java.util.Objects;
+
 public class SpawnerWrenchesCommand extends BaseCommand {
 
-    private Main main = Main.getInstance();
+    private final Main main = Main.getInstance();
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
@@ -22,9 +24,7 @@ public class SpawnerWrenchesCommand extends BaseCommand {
                     main.loadConfig(config);
 
                     // Reload command permission messages
-                    main.getDescription().getCommands().keySet().forEach(pluginCmd -> {
-                        main.getCommand(pluginCmd).setPermissionMessage(Text.colour(Language.NO_PERMISSION.toString()));
-                    });
+                    main.getDescription().getCommands().keySet().forEach(pluginCmd -> Objects.requireNonNull(main.getCommand(pluginCmd)).setPermissionMessage(Text.colour(Language.NO_PERMISSION.toString())));
 
                     sender.sendMessage(Text.colour(Language.RELOAD.toString()));
                 } else if (args[0].equalsIgnoreCase("help")) {
@@ -41,9 +41,7 @@ public class SpawnerWrenchesCommand extends BaseCommand {
 
     private void help(CommandSender sender) {
         sender.sendMessage(Text.colour(Language.HELP_MENU_HEADER.toString()));
-        Language.HELP_MENU_CONTENTS.toList().forEach(help -> {
-            sender.sendMessage(Text.colour(help));
-        });
+        Language.HELP_MENU_CONTENTS.toList().forEach(help -> sender.sendMessage(Text.colour(help)));
     }
 
 }

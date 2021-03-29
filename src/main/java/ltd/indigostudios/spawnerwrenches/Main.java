@@ -1,14 +1,17 @@
 package ltd.indigostudios.spawnerwrenches;
 
 import ltd.indigostudios.spawnerwrenches.api.Language;
-import ltd.indigostudios.spawnerwrenches.commands.*;
+import ltd.indigostudios.spawnerwrenches.commands.BaseCommand;
+import ltd.indigostudios.spawnerwrenches.commands.GiveSpawnerCommand;
+import ltd.indigostudios.spawnerwrenches.commands.GiveWrenchCommand;
+import ltd.indigostudios.spawnerwrenches.commands.SpawnerCommand;
+import ltd.indigostudios.spawnerwrenches.commands.SpawnerWrenchesCommand;
 import ltd.indigostudios.spawnerwrenches.listeners.BlockPlaceListener;
 import ltd.indigostudios.spawnerwrenches.listeners.PlayerInteractListener;
 import ltd.indigostudios.spawnerwrenches.listeners.PrepareAnvilListener;
 import ltd.indigostudios.spawnerwrenches.utils.YML;
 import org.bukkit.Bukkit;
-import org.bukkit.NamespacedKey;
-import org.bukkit.command.*;
+import org.bukkit.command.PluginCommand;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
 

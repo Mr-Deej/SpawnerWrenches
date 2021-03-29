@@ -21,6 +21,7 @@ public class GiveWrenchCommand extends BaseCommand {
                         Player player = Bukkit.getPlayer(args[0]);
                         if (args.length >= 3) {
                             if (StringUtils.isNumeric(args[2])) {
+                                assert player != null;
                                 player.getInventory().addItem(ItemBuilder.getSpawnerWrench(Integer.parseInt(args[1]), Integer.parseInt(args[2])));
                             } else {
                                 sender.sendMessage(Text.colour(Language.INVALID_NUMERICAL_VALUE.toString()));

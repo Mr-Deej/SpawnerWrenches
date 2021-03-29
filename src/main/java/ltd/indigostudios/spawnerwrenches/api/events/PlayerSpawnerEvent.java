@@ -9,11 +9,11 @@ import org.bukkit.event.HandlerList;
 
 public abstract class PlayerSpawnerEvent extends Event implements Cancellable {
 
-    private static HandlerList handlers = new HandlerList();
+    private static final HandlerList handlers = new HandlerList();
 
-    private Player player;
-    private Block block;
-    private EntityType entityType;
+    private final Player player;
+    private final Block block;
+    private final EntityType entityType;
     private boolean isCancelled;
 
     public PlayerSpawnerEvent(Player player, Block block, EntityType entityType) {

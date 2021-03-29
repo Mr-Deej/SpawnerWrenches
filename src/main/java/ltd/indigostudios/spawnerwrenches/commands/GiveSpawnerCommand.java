@@ -26,13 +26,14 @@ public class GiveSpawnerCommand extends BaseCommand {
                     if (Utils.entityExists(args[1].toUpperCase())) {
                         Player target = Bukkit.getPlayer(args[0]);
 
-                        int amount = 1;
+                        int amount;
                         if (StringUtils.isNumeric(args[2])) {
                             amount = Integer.parseInt(args[2]);
                             ItemStack item = ItemBuilder.getSpawner(args[1]);
                             item.setAmount(amount);
 
                             sender.sendMessage(Text.colour(Language.SPAWNER_GIVEN.toString().replace("{0}", args[0]).replace("{1}", Integer.toString(amount)).replace("{2}", entityName)));
+                            assert target != null;
                             target.getInventory().addItem(item);
                         } else {
                             sender.sendMessage(Text.colour(Language.INVALID_NUMERICAL_VALUE.toString()));

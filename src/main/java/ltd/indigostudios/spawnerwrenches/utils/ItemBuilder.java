@@ -2,7 +2,6 @@ package ltd.indigostudios.spawnerwrenches.utils;
 
 import ltd.indigostudios.spawnerwrenches.api.Keys;
 import ltd.indigostudios.spawnerwrenches.api.Language;
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;

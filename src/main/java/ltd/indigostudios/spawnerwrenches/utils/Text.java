@@ -34,17 +34,17 @@ public class Text {
      */
     public static String convertUnformattedString(String old) {
 
-        String convert = old.toLowerCase().replaceAll("\\_", " ");
-        String newValue = "";
+        String convert = old.toLowerCase().replaceAll("_", " ");
+        StringBuilder newValue = new StringBuilder();
 
         boolean space = true;
         for (int i = 0; i < convert.length(); i++) {
-            if (space) newValue += Character.toUpperCase(convert.charAt(i));
-            else newValue += convert.charAt(i);
+            if (space) newValue.append(Character.toUpperCase(convert.charAt(i)));
+            else newValue.append(convert.charAt(i));
             space = convert.charAt(i) == ' ';
         }
 
-        return newValue;
+        return newValue.toString();
     }
 
 }

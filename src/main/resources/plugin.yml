@@ -1,7 +1,7 @@
 main: ltd.indigostudios.spawnerwrenches.Main
 name: SpawnerWrenches
 version: ${project.version}
-api-version: 1.13
+api-version: 1.17
 author: TheMGRF
 description: A simple and effective Spawner System
 

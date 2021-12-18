@@ -1,8 +1,6 @@
 package ltd.indigostudios.spawnerwrenches.listeners;
 
-import ltd.indigostudios.spawnerwrenches.Main;
 import ltd.indigostudios.spawnerwrenches.api.Keys;
-import org.bukkit.NamespacedKey;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.PrepareAnvilEvent;

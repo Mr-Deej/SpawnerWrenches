@@ -60,8 +60,6 @@ public class PlayerInteractListener implements Listener {
                                 remove = false;
                                 int newUses = (uses - 1);
                                 ItemBuilder.updateUses(item, newUses);
-                            } else {
-                                remove = true;
                             }
                         }
 
